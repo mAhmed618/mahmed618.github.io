@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente principal */
+    background: #17198d; /* Color de fondo */
+    color: #333; /* Color del texto */
+    display: flex; /* Centrar contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Altura de la ventana */
+    margin: 0; /* Eliminar márgenes predeterminados */
+}
+
+.container {
+    background: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Ocultar contenido desbordante */
+    display: grid; /* Grid layout */
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    width: 80%; /* Ancho del contenedor */
+    max-width: 900px; /* Ancho máximo */
+}
+
+.profile {
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Texto centrado */
+    border-right: 1px solid #ccc; /* Borde derecho */
+}
+
+.profile-img {
+    border-radius: 50%; /* Imagen circular */
+    width: 200px; /* Ancho de la imagen */
+    height: 200px; /* Altura de la imagen */
+}
+
+.description {
+    font-size: 1.2em; /* Tamaño del texto */
+    margin: 10px 0; /* Márgenes verticales */
+}
+
+.handle {
+    font-size: 1em; /* Tamaño del texto */
+    color: #777; /* Color del texto */
+}
+
+.links {
+    display: grid; /* Grid layout */
+    grid-template-rows: repeat(9, 1fr); /* Nueve filas iguales */
+}
+
+.link {
+    display: flex; /* Flex layout */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    margin: 0; /* Sin márgenes */
+    padding: 15px 0; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    color: #fff; /* Color del texto */
+    font-size: 1.2em; /* Tamaño del texto */
+    transition: background 0.3s; /* Transición suave */
+}
+
+.link:hover {
+    filter: brightness(0.9); /* Oscurecer al pasar el cursor */
+}
+
+/* Colores de fondo para cada enlace */
+.tiktok { background: #010101; }
+.youtube { background: #FF0000; }
+.twitter { background: #1DA1F2; }
+.instagram { background: #C13584; }
+.facebook { background: #4267B2; }
+.github { background: #333; }
+.linkedin { background: #0077B5; }
+.email { background: #00457C; }
+.whatsapp { background: #00C244; }
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Una sola columna */
+        width: 90%; /* Ancho del contenedor */
+    }
+    .profile {
+        border-right: none; /* Sin borde derecho */
+        border-bottom: 1px solid #ccc; /* Borde inferior */
+    }
+}
