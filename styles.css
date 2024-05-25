@@ -4,9 +4,11 @@ body {
     color: #333; /* Color del texto */
     display: flex; /* Centrar contenido */
     justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
+    align-items: flex-start; /* Alinear contenido en la parte superior */
     height: 100vh; /* Altura de la ventana */
     margin: 0; /* Eliminar márgenes predeterminados */
+    padding: 20px; /* Espacio alrededor del contenido */
+    box-sizing: border-box; /* Incluir padding en el cálculo del tamaño */
 }
 
 .container {
@@ -16,8 +18,9 @@ body {
     overflow: hidden; /* Ocultar contenido desbordante */
     display: grid; /* Grid layout */
     grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-    width: 80%; /* Ancho del contenedor */
+    width: 100%; /* Ancho del contenedor */
     max-width: 900px; /* Ancho máximo */
+    margin-top: 20px; /* Margen superior */
 }
 
 .profile {
@@ -28,12 +31,12 @@ body {
 
 .profile-img {
     border-radius: 50%; /* Imagen circular */
-    width: 200px; /* Ancho de la imagen */
-    height: 200px; /* Altura de la imagen */
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Altura de la imagen */
 }
 
 .description {
-    font-size: 1.2em; /* Tamaño del texto */
+    font-size: 1em; /* Tamaño del texto */
     margin: 10px 0; /* Márgenes verticales */
 }
 
@@ -52,10 +55,10 @@ body {
     align-items: center; /* Centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
     margin: 0; /* Sin márgenes */
-    padding: 15px 0; /* Espaciado interno */
+    padding: 10px 0; /* Espaciado interno */
     text-decoration: none; /* Sin subrayado */
     color: #fff; /* Color del texto */
-    font-size: 1.2em; /* Tamaño del texto */
+    font-size: 1em; /* Tamaño del texto */
     transition: background 0.3s; /* Transición suave */
 }
 
@@ -83,5 +86,12 @@ body {
     .profile {
         border-right: none; /* Sin borde derecho */
         border-bottom: 1px solid #ccc; /* Borde inferior */
+    }
+    .profile-img {
+        width: 150px; /* Ancho de la imagen en móviles */
+        height: 150px; /* Altura de la imagen en móviles */
+    }
+    .description {
+        font-size: 0.9em; /* Tamaño del texto en móviles */
     }
 }
