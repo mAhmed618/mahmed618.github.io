@@ -1,38 +1,61 @@
 body {
-    font-family: 'Roboto', sans-serif; /* Fuente principal */
+    font-family: 'Roboto', sans-serif; /* Fuente principal del documento */
+    background: #17198d; /* Color de fondo de la página */
+    color: #333; /* Color del texto principal */
+    display: flex; /* Usar flexbox para el diseño del contenedor */
+    justify-content: center; /* Centrar el contenido horizontalmente */
+    align-items: center; /* Centrar el contenido verticalmente */
+    height: 120vh; /* Altura del contenedor, un poco más alta que la ventana del navegador */
+    margin: 0; /* Eliminar los márgenes por defecto */
+    padding: 20px; /* Añadir un espaciado interno alrededor del contenido */
+    box-sizing: border-box; /* Incluir padding en el cálculo del tamaño del elemento */
+    position: relative; /* Permitir posicionar elementos hijos de forma relativa */
+}
+
+.background {
+    position: absolute; /* Posiciona el elemento de forma absoluta dentro del contenedor */
+    top: 0; /* Posición en la parte superior */
+    left: 0; /* Posición en la parte izquierda */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 50%; /* Ocupa la mitad de la altura */
     background: #17198d; /* Color de fondo */
-    color: #333; /* Color del texto */
-    display: flex; /* Centrar contenido */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: flex-start; /* Alinear contenido en la parte superior */
-    height: 100vh; /* Altura de la ventana */
-    margin: 0; /* Eliminar márgenes predeterminados */
-    padding: 20px; /* Espacio alrededor del contenido */
-    box-sizing: border-box; /* Incluir padding en el cálculo del tamaño */
+    z-index: -1; /* Coloca el fondo detrás del contenido */
+}
+
+.background::after {
+    content: ''; /* Añade contenido vacío */
+    position: absolute; /* Posiciona de forma absoluta */
+    top: 100%; /* Posición justo debajo del fondo principal */
+    left: 0; /* Posición en la parte izquierda */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa el mismo alto */
+    background: #73dcf4; /* Color de fondo diferente */
 }
 
 .container {
-    background: #fff; /* Fondo blanco */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    background: #fff; /* Fondo blanco para el contenedor */
     border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    overflow: hidden; /* Ocultar contenido desbordante */
-    display: grid; /* Grid layout */
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-    width: 100%; /* Ancho del contenedor */
-    max-width: 900px; /* Ancho máximo */
-    margin-top: 20px; /* Margen superior */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenedor */
+    overflow: hidden; /* Oculta el contenido que desborda el contenedor */
+    display: grid; /* Usar diseño de cuadrícula */
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    width: 100%; /* Ancho completo del contenedor */
+    max-width: 900px; /* Ancho máximo limitado */
+    margin: auto; /* Centrar el contenedor horizontalmente */
 }
 
 .profile {
     padding: 20px; /* Espaciado interno */
-    text-align: center; /* Texto centrado */
+    text-align: center; /* Centra el texto */
     border-right: 1px solid #ccc; /* Borde derecho */
 }
 
 .profile-img {
-    border-radius: 50%; /* Imagen circular */
-    width: 100px; /* Ancho de la imagen */
-    height: 100px; /* Altura de la imagen */
+    border-radius: 15pt; /* Bordes redondeados para la imagen */
+    width: 300px; /* Ancho de la imagen */
+    height: 225px; /* Altura de la imagen */
+    font-weight: bold; /* Texto en negrita */
 }
 
 .description {
@@ -42,28 +65,29 @@ body {
 
 .handle {
     font-size: 1em; /* Tamaño del texto */
-    color: #777; /* Color del texto */
+    color: #000000; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
 }
 
 .links {
-    display: grid; /* Grid layout */
-    grid-template-rows: repeat(9, 1fr); /* Nueve filas iguales */
+    display: grid; /* Usar diseño de cuadrícula */
+    grid-template-rows: repeat(9, 1fr); /* Nueve filas de igual tamaño */
 }
 
 .link {
-    display: flex; /* Flex layout */
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
+    display: flex; /* Usar flexbox para el diseño */
+    align-items: center; /* Centrar el contenido verticalmente */
+    justify-content: center; /* Centrar el contenido horizontalmente */
     margin: 0; /* Sin márgenes */
     padding: 10px 0; /* Espaciado interno */
     text-decoration: none; /* Sin subrayado */
     color: #fff; /* Color del texto */
     font-size: 1em; /* Tamaño del texto */
-    transition: background 0.3s; /* Transición suave */
+    transition: background 0.3s; /* Transición suave para el fondo */
 }
 
 .link:hover {
-    filter: brightness(0.9); /* Oscurecer al pasar el cursor */
+    filter: brightness(0.9); /* Oscurecer el fondo al pasar el cursor */
 }
 
 /* Colores de fondo para cada enlace */
@@ -77,21 +101,42 @@ body {
 .email { background: #00457C; }
 .whatsapp { background: #00C244; }
 
+/* Estilo para el pie de página */
+footer {
+    grid-column: span 2; /* Abarca ambas columnas del grid */
+    text-align: center; /* Centrar el texto */
+    background: #fff; /* Fondo blanco */
+    font-size: 1em; /* Tamaño del texto */
+}
+
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr; /* Una sola columna */
-        width: 90%; /* Ancho del contenedor */
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+        width: 90%; /* Ancho del contenedor reducido */
+        margin-top: 30px; /* Añadir margen superior */
     }
     .profile {
-        border-right: none; /* Sin borde derecho */
-        border-bottom: 1px solid #ccc; /* Borde inferior */
+        display: flex; /* Usar flexbox para el diseño */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        border-right: none; /* Eliminar borde derecho */
+        border-bottom: 1px solid #ccc; /* Añadir borde inferior */
+        flex-direction: column-reverse; /* Invertir la dirección de los elementos */
     }
     .profile-img {
-        width: 150px; /* Ancho de la imagen en móviles */
-        height: 150px; /* Altura de la imagen en móviles */
+        width: 150px; /* Ancho de la imagen reducido */
+        height: 150px; /* Altura de la imagen reducida */
+    }
+    .link {
+        font-size: 0.8em; /* Tamaño del texto reducido */
     }
     .description {
-        font-size: 0.9em; /* Tamaño del texto en móviles */
+        font-size: 0.9em; /* Tamaño del texto reducido */
+    }
+    footer {
+        grid-column: span 1; /* Abarca una columna en pantallas pequeñas */
+        position: static; /* Elimina la posición absoluta */
+        font-size: 0.9em; /* Tamaño del texto reducido */
     }
 }
